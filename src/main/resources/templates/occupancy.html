@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Landon Hotel | Rooms</title>
+  <title>Landon Hotel | Occupancy</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 </head>
 <body>
@@ -28,22 +28,36 @@
   </nav>
 </header>
 <main class="container">
-  <h1>Rooms</h1>
+  <h1>Occupancy</h1>
+  <div>
+    <input id="picker" type="date" onchange="handleDate()" th:text="${date}" />
+  </div>
   <table class="table table-striped">
     <thead>
-    <th scope="col">Number</th>
-    <th scope="col">Name</th>
-    <th scope="col">Bed Info</th>
+    <th scope="col">Room Number</th>
+    <th scope="col">Room Name</th>
+    <th scope="col">Guest</th>
     </thead>
     <tbody>
-    <tr th:each="room : ${rooms}">
-      <td th:text="${room.roomNumber}">Room Number</td>
-      <td th:text="${room.name}">Room Name</td>
-      <td th:text="${room.bedIfo}">Bed Info</td>
+    <tr th:each="reservation : ${reservations}">
+      <td th:text="${reservation.roomNumber}">Room Number</td>
+      <td th:text="${reservation.roomName}">Room Name</td>
+      <td th:text="${reservation.lastName}!=null?${reservation.lastName}+', '+${reservation.firstName}: 'VACANT'">Guest</td>
     </tr>
     </tbody>
   </table>
 </main>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+<script type="text/javascript">
+  function handleDate() {
+    let date = document.getElementById('picker').valueAsDate;
+    let result = date.toISOString().split('T')[0];
+    if ('URLSearchParams' in window){
+      var searchParams = new URLSearchParams(window.location.search);
+      searchParams.set("date", result);
+      window.location.search = searchParams.toString();
+    }
+  }
+</script>
 </body>
 </html>
