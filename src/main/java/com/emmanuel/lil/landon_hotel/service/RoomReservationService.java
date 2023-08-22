@@ -1,4 +1,5 @@
 package com.emmanuel.lil.landon_hotel.service;
+
 import com.emmanuel.lil.landon_hotel.data.entity.Guest;
 import com.emmanuel.lil.landon_hotel.data.entity.Reservation;
 import com.emmanuel.lil.landon_hotel.data.entity.Room;
@@ -8,6 +9,7 @@ import com.emmanuel.lil.landon_hotel.data.repository.RoomRepository;
 import com.emmanuel.lil.landon_hotel.service.model.RoomReservation;
 import io.micrometer.common.util.StringUtils;
 import org.springframework.stereotype.Service;
+
 import java.sql.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -19,11 +21,13 @@ public class RoomReservationService {
     private final GuestRepository guestRepository;
     private final RoomRepository roomRepository;
     private final ReservationRepository reservationRepository;
+
     public RoomReservationService(GuestRepository guestRepository, RoomRepository roomRepository, ReservationRepository reservationRepository) {
         this.guestRepository = guestRepository;
         this.roomRepository = roomRepository;
         this.reservationRepository = reservationRepository;
     }
+
     public List<RoomReservation> getRoomReservationForDate(String reservationDate) {
         Date date = null;
         if(StringUtils.isNotEmpty(reservationDate)){

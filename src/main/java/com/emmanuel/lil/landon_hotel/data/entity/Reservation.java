@@ -1,7 +1,9 @@
 package com.emmanuel.lil.landon_hotel.data.entity;
+
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.ToString;
+
 import java.sql.Date;
 
 @Entity

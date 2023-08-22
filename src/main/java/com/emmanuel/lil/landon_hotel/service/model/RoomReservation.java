@@ -1,4 +1,5 @@
 package com.emmanuel.lil.landon_hotel.service.model;
+
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
