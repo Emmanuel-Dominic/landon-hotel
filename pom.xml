@@ -6,26 +6,33 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>3.3.4</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath/>
 	</parent>
 	<groupId>com.emmanuel.lil</groupId>
 	<artifactId>landon-hotel</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>landon-hotel</name>
 	<description>Demo project for Spring Boot</description>
-	<url/>
+	<url>https://github.com/Emmanuel-Dominic/landon-hotel</url>
 	<licenses>
-		<license/>
+		<license>
+			<name>MIT License</name>
+			<url>https://opensource.org/licenses/MIT</url>
+		</license>
 	</licenses>
 	<developers>
-		<developer/>
+		<developer>
+			<id>#50827537</id>
+			<name>Matembu Emmanuel Dominic</name>
+			<email>ematembu2@gmail.com</email>
+		</developer>
 	</developers>
 	<scm>
-		<connection/>
-		<developerConnection/>
-		<tag/>
-		<url/>
-	</scm>
+        <connection>scm:git:git://github.com/Emmanuel-Dominic/landon-hotel.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/Emmanuel-Dominic/landon-hotel.git</developerConnection>
+        <tag>main</tag>
+        <url>https://github.com/Emmanuel-Dominic/landon-hotel</url>
+    </scm>
 	<properties>
 		<java.version>21</java.version>
 		<maven.compiler.source>21</maven.compiler.source>
@@ -67,7 +74,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.10.1</version>
+				<version>3.11.0</version>
 				<configuration>
 					<release>${java.version}</release>
 					<compilerId>javac</compilerId>
